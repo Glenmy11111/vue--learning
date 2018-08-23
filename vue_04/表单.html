@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数组的v-for</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	<select v-model="selected">
+    <!-- 内联对象字面量 -->
+       <option v-bind:value="{ number: 123 }">123</option>
+   </select>
+ </div>
+ <script type="text/javascript">
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+             selected:'',
+ 		},
+ 		
+ 	});
+ 	//Myapp.selected.number===>123
+ </script>
+</body>
+</html>

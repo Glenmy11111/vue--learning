@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="../vue.js"></script>
+	<title>计算属性computed</title>
+</head>
+<body>
+   <div id="myDemo">
+      今日新推出了一叶子面膜,原价为:{{money}}元<br/>税前价格为{{IndexMOney}}元<br/>
+      现价为:{{downMoney}}元<br/>
+        <button @click="Btn(400)">点击改变税前价格</button>
+   </div>
+ 
+   <script type="text/javascript">
+   	var Mydemo=new Vue({
+   		el:'#myDemo',
+   		data:{
+   			money:200
+   		},
+   		computed:{
+   			IndexMOney:{
+               get:function(){
+   				return this.money*1.5;
+   			},
+            /*当IndexMOney的值，发生改变时，执行以下代码
+            value即为改变后的IndexMOney
+             */
+              set:function(value){
+               this.money=value/1.5;
+              }
+           },
+             downMoney:function(){
+              return this.money*0.8;
+           }
+   		},
+         methods:{
+            Btn:function(num){
+               this.IndexMOney=num;
+            }
+         }
+
+   	})
+   </script>
+</body>
+</html>

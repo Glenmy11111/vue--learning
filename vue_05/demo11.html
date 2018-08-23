@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件的注册</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="myDemo">
+      <h1>{{info}}</h1>
+      <my-second></my-second>
+      <my-first></my-first>
+
+  </div>
+<script>
+    Vue.component('my-first',{
+        data:function(){
+            return{
+                msg:"这是全局my first day",
+            }
+        },
+        template:`<h3>{{msg}}</h3>`
+    });
+    Vue.component('my-second',{
+        data:function(){
+            return{
+                msg:'这是全局my second day',
+            }
+        },
+        template:`<h3>{{msg}}</h3>`,
+    });
+    new Vue({
+        el:"#myDemo",
+        data:{
+            info:'提示信息',
+        },
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue组件局部注册</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+   <div id="Mydemo">
+     <h1>{{info}}</h1>
+       <my-first><my-second></my-second></my-first>
+
+   </div>
+<script>
+    var first={
+        data:function(){
+            return{
+                msg:"Hello this the first day",
+            }
+        },
+        template:`<h3>{{msg}}</h3>`,
+    };
+    var second={
+        data:function(){
+            return{
+                msg:"Hello this is the second day",
+            }
+        },
+        template:`<h3>{{msg}}</h3>`
+    };
+    //创建根实例
+    new Vue({
+        el:"#Mydemo",
+        data:{
+            info:"提示信息",
+        },
+        components:{
+            'my-first':first,
+            'my-second':second,
+        }
+
+    })
+</script>
+</body>
+</html>

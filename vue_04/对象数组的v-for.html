@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>复习01</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	<div v-for="(value,key,index) in objects">{{index+1}}.{{key}}:{{value}}</div>
+ </div>
+ <script type="text/javascript">
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 		   objects:{
+ 		   	firstname:'Elena',
+ 		   	lastname:'Savotor',
+ 		   	
+ 		   	age:18
+ 		   }
+ 		},
+ 	})
+ </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- 表行组件
+制作表行组件
+表行组件(为自己的页面表格编写表行组件) -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>表行组件</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="myDemo">
+		<table border="1">
+			<tr><td>编号</td><td>名称</td></tr>
+			<!-- 在工作中要想编辑表行，需要用到is属性 -->
+			<tr is="my-row1"></tr>
+			<tr is="my-row2"></tr>
+			<tr is="my-row3"></tr>
+		</table>
+	</div>
+	<script type="text/javascript">
+		Vue.component('my-row1',{template:'<tr><td>(1)</td><td>开心消消乐</td></tr>'});
+		Vue.component('my-row2',{template:'<tr><td>(2)</td><td>我的世界</td></tr>'});
+		Vue.component('my-row3',{template:'<tr><td>(3)</td><td>王者荣耀</td></tr>'});
+		var myDemo=new Vue({
+			el:'#myDemo',
+			data:{}
+		})
+	</script>
+	
+</body>
+</html>

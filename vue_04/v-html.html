@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>v-html</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	<p>{{message}}</p>
+ 	<p><span v-html="message"></span></p>
+ </div>
+ <script type="text/javascript">
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 			message:'<span style="display:block;height:200px;width=200px;background:red;font-size:30px">Hello </span>',
+ 		},
+ 	})
+ </script>
+</body>
+</html>

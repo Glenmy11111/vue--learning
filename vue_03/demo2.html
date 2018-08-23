@@ -1,0 +1,54 @@
+<!-- 知识点：
+表单修饰符
+.lazy(用户输入内容时不做绑定数据的更新处理，在控件的onchange事件中更新绑定处理)
+.number(用户输入的内容转换为数值类型，如果用户输入非数值的时候，返回NaN)
+.trim (自动去掉用户输入内容两端的空格)
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>表单修饰符</title>
+   <script src="../vue.js"></script>
+</head>
+<body>
+	<div id="myDemo">
+		<h1>用户注册</h1>
+		<div>
+			<label for="username">用户:</label>
+			<input type="text" id="username" v-model.lazy="username" @change="checkUsername">
+			<span v-if="checkUser">可注册</span>
+		</div>
+		<div>
+			<label for="age">年龄</label>
+			<input type="number" id="age" v-model.number="age">
+		</div>
+		<div>
+			<label for="content">个人概况</label>
+			<textarea id="content" v-model.trim="content" cols="55" rows="8"></textarea>
+		</div>
+		<h4>信息区</h4>
+		<p>{{username}}</p>
+		<p>{{age}}</p>
+		<p><pre>{{content}}</pre>
+	</div>
+	<script type="text/javascript">
+		var myDemo=new Vue({
+			el:'#myDemo',
+			data:{
+				username:"",
+				checkUser:false,
+				age:"",
+				content:""
+
+			},
+			methods:{
+				checkUsername:function(){
+					if(this.username.length>0) {this.checkUser=true;}
+					 else {this.checkUser=false;}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

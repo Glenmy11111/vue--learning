@@ -1,0 +1,30 @@
+<!-- 循环JS对象，将对象内容显示到页面 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS对象迭代</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="../vue.js"></script>
+</head>
+<body>
+	<div id="myDemo">
+		<ul>
+			<li v-for="(value,key) in items">{{key}}:{{value}}</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var Myapp=new Vue({
+			el:'#myDemo',
+			data:{
+				items:{
+					title:'我的书架',
+					date:'发起日期为2018年8月',
+					autor:'Glenmy',
+					says:'What doesn.t kill you,will make you stronger.'
+				}
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数组的v-for</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	<button v-on:keyup.enter="warn('Form cannot be submitted yet.')">
+      Submit
+   </button>
+ </div>
+ <script type="text/javascript">
+ 	Vue.component('li-list',{
+ 		props:['game'],
+ 		template:'<li>{{game.name}}</li>'
+ 	});
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 			
+ 		},
+ 		methods:{
+ 			warn: function (message) {
+         // 现在我们可以访问原生事件对象
+         
+            alert(message);
+  }
+ 		}
+ 	});
+ </script>
+</body>
+</html>

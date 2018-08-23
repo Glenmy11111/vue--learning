@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深入了解组价第一篇</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="myDemo">
+     <my-demo post-title="Hello Time"></my-demo>
+  </div>
+<script>
+    //意味着当你使用 DOM 中的模板时
+    //camelCase (驼峰命名法) 的 prop 名
+    //需要使用其等价的 kebab-case (短横线分隔命名) 命名
+    Vue.component('my-demo',{
+        props:['postTitle'],
+        template:`<h3>{{postTitle}}</h3>`,
+    });
+    new Vue({
+        el:"#myDemo",
+
+    })
+</script>
+</body>
+</html>

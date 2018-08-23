@@ -1,0 +1,39 @@
+<!-- watch就像是onchange事件一样，当检测到对应对象的变换，就会触发对应的函数，跟computed很类似
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="../vue.js"></script>
+	<title>watch属性</title>
+</head>
+<body>
+   <div id="myDemo">
+      今日新推出了一叶子面膜,原价为:{{money}}元,现价为:{{cheap}}元
+      <button @click="Btn(-10)">降价10元</button>
+   </div>
+   <script type="text/javascript">
+   	var Mydemo=new Vue({
+   		el:'#myDemo',
+   		data:{
+   			money:0,
+            cheap:0
+   		},
+         /*当检测到price发生变化时，就会执行watch里面的东西*/
+   		watch:{
+   			money:function(newM,oldM){
+               console.log(newM,oldM);
+               this.cheap=this.money*0.8;
+   			}
+   		},
+         methods:{
+            Btn:function(num){ 
+               this.money+=num;
+            }
+         }
+
+   	}) 
+      Mydemo.money=200;
+   </script>
+</body>
+</html>

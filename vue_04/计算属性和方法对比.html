@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>复习01</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	<h3 >{{message}}</h3>
+ 	<p>{{changeSomething}}</p>
+ </div>
+ <script type="text/javascript">
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 			message:'今天是：'+new Date().toLocaleString(),
+ 		},
+ 		computed:{
+ 			changeSomething:function(){
+ 				return (new Date().toLocaleString());
+ 			}
+ 		}
+ 	})
+ </script>
+</body>
+</html>

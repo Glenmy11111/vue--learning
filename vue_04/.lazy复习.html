@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数组的v-for</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	信息:<input type="text" v-model.lazy="message" v.bind:change="showThing">
+ 	<p>{{message}}</p>
+ </div>
+ <script type="text/javascript">
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 		   message:'',
+ 		},
+ 		methods:{
+ 			showThing:function(){
+ 				return this.message;
+ 			}
+ 		}
+ 	});
+ </script>
+</body>
+</html>

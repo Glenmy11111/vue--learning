@@ -1,0 +1,34 @@
+<!-- 条件渲染
+v-if
+v-else-if -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>条件渲染</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="../vue.js"></script>
+</head>
+<body>
+	<div id="myApp">
+		<h1 v-if="result===0">成绩未公布</h1>
+		<h1 v-else-if="result<60">您的成绩为:{{result}},未及格</h1>
+		<h1 v-else-if="result<80">您的成绩为:{{result}},已经及格,达到白银段位</h1>
+		<h1 v-else-if="result>=80">您的成绩为:{{result}},恭喜您已经达到王者段位</h1>
+		<button @click="Btn">查询成绩</button>
+	</div>
+	<script type="text/javascript">
+		var myDemo=new Vue({
+			el:'#myApp',
+			data:{
+				result:0
+			},
+			methods:{
+				Btn:function(){
+					this.result=Math.round(Math.random()*100);
+				}
+			}
+		})
+	</script>
+</body>
+</html>

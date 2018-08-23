@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>复习01</title>
+	<script src="../vue.js"></script>
+	<style type="text/css">
+		.active{
+			font-size:40px;
+			line-height:30px;
+			color:red;
+		}
+		.bg{
+			background-color:skyblue;
+		}
+	</style>
+</head>
+<body>
+ <div id="myApp">
+ 	<p v-bind:class="classObject">Hello Time</p>
+ </div>
+ <script type="text/javascript">
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 				active:true,
+ 			    bg:false,
+
+ 		},
+ 		computed:{
+ 			classObject:function(){
+ 				return {
+ 					active:true,
+ 					bg:true
+ 				}
+ 			}
+ 		}
+
+ 	})
+ </script>
+</body>
+</html>

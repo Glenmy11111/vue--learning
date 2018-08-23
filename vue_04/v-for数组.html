@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数组的v-for</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	<ul>
+ 		<li v-for="(item,index) in items">{{index}}-{{item}}</li>
+ 	</ul>
+ </div>
+ <script type="text/javascript">
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 		   items:['a','b','c'],
+ 		}
+ 	});
+ 	//下面设置的这些都不起作用
+ 	/*Myapp.items[0]="I can't find my way";
+ 	Myapp.items.length=2;*/
+ 	//为了解决上述的问题，做了如下的设置 
+ 	Myapp.$set(Myapp.items,0,"I can't find my way");
+ 	Myapp.items.splice(2);
+ </script>
+</body>
+</html>

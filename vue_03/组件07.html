@@ -1,0 +1,52 @@
+<!-- 知识点
+props:组件参数验证语法
+为组件中接受到的变量进行逻辑验证 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>组件:参数验证</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+  <div id="myDemo">
+  	<h3>个人概况</h3>
+    <secret-info name="Tom" :age="600" :detail="{address:'China',language:'Chinese'}"></secret-info>
+  </div>
+  <script type="text/javascript">
+  	Vue.component('secret-info',{
+  		props:{
+  			name:{
+  				type:String,
+  				required:true
+  			},
+  			age:{
+                type:Number,
+                valitor:function(name){
+                	return name>=0&&name<=130;
+                	}
+  			},
+  			detail:{
+  				type:Object,
+  				default:function(){
+  					return{
+  						language:'US',
+  				        address:"澳大利亚"
+  					}
+  				}
+  				
+  			}
+  		},
+  		template:
+  			'<div>姓名:{{this.name}}<br/>'
+  			+ '年龄:{{this.age}}岁<br/>'
+  			+ '语言:{{this.detail.language}}<br/>'
+  			+ '地址:{{this.detail.address}}</div>',
+  		
+  	})
+  	var myDemo=new Vue({
+     el:'#myDemo',
+  	});
+  </script>
+</body>
+</html>

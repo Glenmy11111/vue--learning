@@ -1,0 +1,26 @@
+<!-- 知识点：
+该节课是全局的组件
+组件：（Component,Portlet 
+组件：组件就是页面上的一小块区域的内容，完成一个小的页面功能-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>组件的基础</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+  <div id="myDemo">
+  	<today-weather></today-weather>
+  </div>
+  <script type="text/javascript">
+  	/*首先要注册组件
+  	Vue.component("此处定义组件名",template:"组件的模板内容"*/
+  	Vue.component("today-weather",{template:'<h1>Today is a good day.</h1>'});
+    /*创建根实例*/
+  	var myApp=new Vue({
+      el:'#myDemo'
+  	})
+  </script>
+</body>
+</html>

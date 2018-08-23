@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数组的v-for</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="blog-posts-events-demo">
+  <div :style="{ fontSize: postFontSize + 'em' }">
+    <blog-post
+      v-on:enlarge-text="postFontSize+=0.1"
+      v-for="post in posts"
+      v-bind:key="post.id"
+      v-bind:post="post"
+    ></blog-post>
+  </div>
+</div>
+ <script type="text/javascript">
+ 	Vue.component('blog-post', {
+  props: ['post'],
+  template: `
+    <div class="blog-post">
+      <h3>{{ post.title }}</h3>
+      <button v-on:click="$emit('enlarge-text')">
+        Enlarge text
+      </button>
+      <div v-html="post.content"></div>
+    </div>`
+})
+ 	var Myapp=new Vue({
+ 		el:'#blog-posts-events-demo',
+ 		data:{
+ 		   postFontSize:1,
+ 		   posts:[{title:'开心消消乐',content:'<p>要了解开心消消乐的详情请登录官网</p>'},
+ 		   {title:'王者荣耀',content:'<p>我对王者荣耀的简介</p>'}
+ 		   ],
+ 		},
+ 	});
+ </script>
+</body>
+</html>

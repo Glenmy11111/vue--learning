@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数组的v-for</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	<ul>
+ 		<li v-for="item in items">{{item}}</li>
+ 	</ul>
+ </div>
+ <script type="text/javascript">
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 		   items:{
+ 		   	name:'Tom',
+ 		   	age:1,
+ 		   }
+ 		}
+ 	});
+ 	Myapp.items=Object.assign({},Myapp.items,{
+ 		friend:'Jerry',
+ 		ad:'US'
+ 	})
+ </script>
+</body>
+</html>

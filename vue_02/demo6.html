@@ -1,0 +1,34 @@
+<!-- classs对象绑定(为html标记绑定样式单的class属性) -->
+<!-- v-bind:class -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>class对象绑定</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="../vue.js"></script>
+</head>
+<body>
+	<div id="myDemo">
+		<p v-bind:class="myClass">文本1</p>
+	    <p v-bind:class="myClass">文本2</p>
+	    <button @click="Btn">点击改变class吧</button>
+	</div>
+	<script type="text/javascript">
+		var myDemo=new Vue({
+			el:'#myDemo',
+			data:{
+				myClass:{
+					big:true,
+					font:true
+				}
+			},
+			methods:{
+				Btn:function(){
+					this.myClass.big=!this.myClass.big;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

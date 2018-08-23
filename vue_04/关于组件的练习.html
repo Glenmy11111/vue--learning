@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数组的v-for</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	<ul>
+ 		<li is="li-list" v-for="item in items" v-bind:game="item" :key="item.id"></li>
+ 	</ul>
+ </div>
+ <script type="text/javascript">
+ 	Vue.component('li-list',{
+ 		props:['game'],
+ 		template:'<li>{{game.name}}</li>'
+ 	});
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 			items:[
+ 			{name:'王者荣耀',id:2},
+ 			{name:'开心消消乐',id:1},
+ 			
+ 			{name:'大鱼吃小鱼',id:3}
+
+ 			]
+ 		},
+ 	});
+ </script>
+</body>
+</html>

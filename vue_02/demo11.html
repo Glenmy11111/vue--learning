@@ -1,0 +1,39 @@
+<!-- 事件处理器v-on:(event) 缩写为@(event)-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>事件处理器v-on</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="../vue.js"></script>
+</head>
+<body>
+	<div id="myDemo">
+		<input id="textname" @click="KeypressDown($event)">
+		<button id="btnOk" @click="Btnclick($event)">OK</button>
+	</div>
+	<script type="text/javascript">
+		var myDemo=new Vue({
+			el:'#myDemo',
+			data:{},
+			methods:{
+				Btnclick:function(event){
+					this.debug(event);
+				},
+				KeypressDown:function(event){
+					this.debug(event);
+				},
+				debug:function(event){
+					console.log(
+						event.srcElement.tagName,
+						event.srcElement.id,
+						event.srcElement.innerHTML,
+						event.key?event.key:""
+						);
+				}
+			}
+
+		})
+	</script>
+</body>
+</html>

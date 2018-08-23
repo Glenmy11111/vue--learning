@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>v-show元素显示</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="../vue.js"></script>
+</head>
+<body>
+	<div id="myDemo">
+       <p v-show="result">Hello time</p>
+       <button @click="Btn">点击显示或隐藏</button>
+	</div>
+	<script type="text/javascript">
+		var myDemo=new Vue({
+			el:'#myDemo',
+			data:{
+				result:true
+			},
+			methods:{
+				Btn:function(){
+					this.result=!this.result;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

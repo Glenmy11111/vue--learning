@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>复习01</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	<showlist v-for="good in goods" v-bind:list="good"></showlist>
+ </div>
+ <script type="text/javascript">
+ 	//组件的注册
+ 	Vue.component('showlist',{
+ 		props:['list'],
+ 		template:'<h3>{{list.name}}/{{list.price}}</h3>',
+ 	})
+ 	//根实例
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 			goods:[{name:'毛衣',price:200},
+ 			{name:'裙子',price:'100'},
+ 			{name:'外套',price:300}
+ 			],
+ 		},
+ 	})
+ </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<script src="../vue.js"></script>
+	<title>v-if和v-for的简单实例</title>
+</head>
+<body>
+<div id="Myapp">
+  <h2>商品列表</h2>
+  <div v-if="seen">今日特别提醒</div>
+    <ol>
+      <li v-for="song in songs">{{song.title}}/{{song.price}}</li>
+    </ol>
+</div>
+  <script>
+  	var my=new Vue({
+  		el:'#Myapp',
+  		data:{
+        seen:false ,
+        songs:[{title:'小精灵',price:'100元'},
+        {title:'魔法城堡',price:'300元'},
+        {title:'你说',price:'200元'}]
+      }
+  	});
+  </script>
+</body>
+</html>

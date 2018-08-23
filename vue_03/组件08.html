@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<!-- 知识点：
+  v-on()
+  $emit()
+ -->
+<head>
+	<meta charset="utf-8">
+	<title>组件:事件传递</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+  <div id="myDemo">
+  	<hereme v-on:dbcliick="icram"></hereme>
+  </div>
+  <script type="text/javascript">
+     Vue.component('hereme',{
+      data:function(){
+         return {
+          counter:0
+         }
+      },
+      template:'<button v-on:click="icreamThing">点击</button>',
+      methods:{
+        icreamThing:function(){
+          this.counter++;
+          //使用$emit(eventName)触发事件
+          this.$item('icreamThing');
+        }
+      }
+     })
+  	var myDemo=new Vue({
+     el:'#myDemo',
+     data:{
+        total:0,
+     },
+     methods:{
+      icram:function(){
+        this.total++;
+      }
+     }
+  	});
+  </script>
+</body>
+</html>

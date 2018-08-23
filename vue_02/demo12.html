@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>v-model</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="../vue.js"></script>
+</head>
+<body>
+	<div id="myDemo">
+		<input type="checkbox" id="game1" value="开心消消乐" v-model="games">
+		<label>开心消消乐</label>
+		<input type="checkbox" id="game2" value="王者荣耀" v-model="games">
+		<label>王者荣耀</label>
+		<p>你最喜欢的游戏是:{{games}}</p>
+	</div>
+	<script type="text/javascript">
+		var myDemo=new Vue({
+			el:'#myDemo',
+			data:{
+				games:[]
+			}
+		});
+	</script>
+</body>
+</html>

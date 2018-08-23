@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>slot插槽</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+  <div id="myDemo">
+  	<say-to pname="Jerry">I what to eat you</say-to>
+    <say-to pname="Tom">Let me go</say-to>
+  </div>
+  <script type="text/javascript">
+    Vue.component('say-to',{
+      props:['pname'],
+      template:'<div>'+
+      '<h3>你好,{{pname}}'+
+      '<slot></slot>'+
+      '</div>'
+    })
+  	var myDemo=new Vue({
+     el:'#myDemo',
+  	});
+  </script>
+</body>
+</html>

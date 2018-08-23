@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>复习01</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	<p>你的firstname是：{{firstname}}</p>
+ 	<p>你的lastname是：{{lastname}}</p>
+ 	<p>你的全名就是:{{fullname}}</p>
+ </div>
+ <script type="text/javascript">
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 			firstname:'SaValitor',
+ 			lastname:'Elena',
+ 			/*fullname:'SaValitor Elena'*/
+ 		},
+ 		computed:{
+ 			fullname:{
+ 				/*getter*/
+ 				get:function(){
+ 					return (this.firstname+' '+this.lastname);
+ 				},
+ 				//setter
+ 				set:function(newValue){
+                     var names=  newValue.split(' ');
+                     this.firstname=names[0];
+                     this.lastname=names[names.length-1];
+ 				}
+ 			}
+ 		}
+
+ 	})
+ </script>
+</body>
+</html>

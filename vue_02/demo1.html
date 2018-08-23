@@ -1,0 +1,36 @@
+<!-- 概念：vue里面的过滤器，filters,其实就像一杯浑浊的水，经过过滤变干净一样的道理 -->
+<!-- 稍微比较官方的就是：格式化变量内容的输出（日期格式化，字母大小写，数字在计算等等 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="../vue.js"></script>
+	<title>filter过滤器</title>
+</head>
+<body>
+	<!-- ‘| ’就是过滤的管道-->
+   <div id="myDemo">
+   	<p>{{message}}</p>
+   	<p>{{message | Upcase}}</p>
+   	<p>您当前的学习进度是:{{num}}({{num | numPercentage}})</p>
+   </div>
+   <script type="text/javascript">
+   	var Mydemo=new Vue({
+   		el:'#myDemo',
+   		data:{
+   			message:'this is the second day ,you come here',
+   			num:0.2
+   		},
+   		filters:{
+   			Upcase:function(value){
+   				return value.toUpperCase();
+   			},
+   			numPercentage:function(value){
+   				return value*100+"%";
+   			}
+   		}
+
+   	})
+   </script>
+</body>
+</html>

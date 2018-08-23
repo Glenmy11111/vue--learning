@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<script src="../vue.js"></script>
+	<title>v-model的简单事例</title>
+</head>
+<body>
+<div id="Myapp">
+  <h3>你最喜欢的组合是:{{message}}</h3>
+  <input v-model="message">
+</div>
+<script type="text/javascript">
+  var my=new Vue({
+    el:'#Myapp',
+    data:{
+      message:'TFBOYS'
+    }
+  })
+</script>
+</body>
+</html> 77 

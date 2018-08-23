@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>复习01</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+ <div id="myApp">
+ 	<ol>
+ 		<li v-for="game in games">{{game.title}}</li>
+ 	</ol>
+ </div>
+ <script type="text/javascript">
+ 	var Myapp=new Vue({
+ 		el:'#myApp',
+ 		data:{
+ 			games:[
+ 			{title:'王者荣耀'},
+ 			{title:'完美世界'},
+ 			{title:'开心消消乐'}
+ 			]
+ 		}
+ 	})
+ </script>
+</body>
+</html>
